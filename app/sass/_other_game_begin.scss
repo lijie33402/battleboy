@@ -1,0 +1,397 @@
+
+/*拳头样式*/
+.beat_beginFist{
+	float: left;
+	height: 180%;
+	width: 67%;
+	margin: 2% 16.5% 5% 16.5%;
+}
+.qui_rule_inner{
+	width: 87%;
+	padding: 0 3%;
+}
+/*适当缩小规则字体避免换行*/
+.qui_context_start h2{
+	margin: 0;
+	font-size: 1.65em;
+	text-align: center;
+	font-weight: normal;
+}
+.beat_toRule{
+	display: block;
+	margin-top: 1%;
+	text-decoration: none;
+	font-size: 1.43em;
+	text-align: center;
+}
+
+
+/*倒计时效果样式*/
+.begin_countdown{
+	color:#ffcb15;
+	font-size: 40px;
+	font-weight: bold;
+	position: absolute;
+	width: 85%;
+	top: 45%;
+	text-align: center;
+}
+/*游戏开始样式*/
+.game_in{
+	width: 100%;
+	height: 100%;
+}
+.beat_gradeTime{
+	display: none;
+	height: 17%;
+}
+.beat_gradeTime .grade{
+	text-align: center;
+}
+.beat_gradeTime, 
+.beat_reduceGrade {
+	color: #ffcb15;
+}
+.beat_gradeTime h1,
+.beat_reduceGrade h1 {
+	display: inline-block;
+	font-size: 67px;
+	font-weight: bold;
+	text-align: center;
+	-webkit-text-stroke: 4px #7a3218;
+	text-stroke: 4px #7a3218;
+}
+.beat_reduceGrade h1 {
+	font-size: 100px;
+}
+.beat_gradeTime .gradeText {
+	margin-left: 2%;
+	font-size: 16px;
+	font-weight: bold;
+	text-shadow: 1px 1px 0 #7a3218;
+}
+@-webkit-keyframes 'point' {
+    0% {top: 0;}
+    90% {top: 30%;}
+    100% {top: 28%;}
+}
+@keyframes 'point' {
+	0% {top: 0;}
+    90% {top: 30%;}
+    100% {top: 28%;}
+}
+.beat_gradeTime .ani_grade {
+	position: absolute;
+	z-index: 1000;
+	left: 0;
+	right: 0;
+	$animationPoint: "point" .5s ease-in 0s forwards;
+	-webkit-animation: $animationPoint;
+	animation: $animationPoint;
+	-webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+}
+.ani_grade h1 {
+	-webkit-text-stroke: 0px #7a3218;
+	text-stroke: 0px #7a3218;
+	font-size: 67px * 2;
+	-webkit-transition: all .4s linear 0s;
+	transition: all .5s linear 0s;
+}
+.ani_grade .gradeText {
+	text-shadow: none;
+	font-size: 16px * 2;
+	-webkit-transition: all .4s linear 0s;
+	transition: all .5s linear 0s;
+}
+
+.beat_gradeTime .time{
+	position: absolute;
+	width: 27%;
+	height: 17%;
+	right: 6%;
+	top:0;
+	font-size: 20px;
+	text-align: right;
+	font-weight: bold;
+	color: #fff;
+	text-shadow: 1px 1px 0 #7a3218;
+}
+.beat_gradeTime .timeText{
+	margin-top: 22%;
+}
+.beat_gradeTime .timeSec{
+	margin-right: 3px;
+}
+
+
+.beat_boyHead{
+	z-index: 2;
+	position: absolute;
+	left: 13%;
+	top: 21%;
+	overflow: hidden;
+}
+.beat_boyHead img{
+	-webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+	width: 100%;
+	height: 700%; 
+	position: absolute;
+	max-width: none;
+	left: 0%;
+	top: 0%;
+}
+.beat_boyBody {
+	position: absolute;
+	background: url('http://static.iorcas.com/tuiguang/20150707_beatboy/images/body.png') no-repeat;
+	background-size: contain;
+}
+
+.beat_hand {
+	position: absolute;
+	z-index: 3;
+}
+.beat_hand_Left,
+.beat_hand_Right {
+	top: 60%;
+	width: 43%;
+	height: 55%;
+	-webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+}
+.beat_hand_Left {
+	background: url("http://static.iorcas.com/tuiguang/20150707_beatboy/images/lefthand.png") no-repeat ;
+	background-size: contain;
+	left: -15%;
+}
+.beat_hand_Right {
+	background: url("http://static.iorcas.com/tuiguang/20150707_beatboy/images/righthand.png") no-repeat;
+	background-size: contain;
+	right: -15%;
+}
+.beat_hand_Left_Hit,
+.beat_hand_Right_Hit {
+	top: 44%;
+}
+.beat_hand_Left_Hit {
+	left: -1%;
+}
+.beat_hand_Right_Hit {
+	right: -1%;
+}
+
+
+.beat_hand_BtmLeft,
+.beat_hand_BtmRight {
+	width: 50%;
+	height: 300%;
+	top: 100%;
+	-webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+}
+.beat_hand_BtmLeft {
+	background: url("http://static.iorcas.com/tuiguang/20150707_beatboy/images/bottomhand_l.png") no-repeat;
+	background-size: contain;
+	left: 0%;
+}	
+.beat_hand_BtmRight {
+	background: url("http://static.iorcas.com/tuiguang/20150707_beatboy/images/bottomhand_r.png") no-repeat;
+	background-size: contain;
+	left: 49%;
+
+}
+
+/* 打击触发 */
+.beat_hit,
+.beat_dbHit{
+	position: absolute;
+	top: 25%;
+	z-index: 4;
+	height: 75%;	
+	width: 100%;
+}
+.beat_dbHit{
+	display: none;
+}
+
+/*小孩还击样式*/
+.beat_beatBack {
+	position: absolute;
+	z-index: -1;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+.beat_beatBack_Show { /* chrome下display:none的元素不存在渲染树中，所以切换到block的时候出现延迟的表现 */
+	z-index: 5;
+}
+.beat_beatBack .hand {
+	position: absolute;
+	top: 51%;
+	left: 8%;
+	width: 35%;
+	height: 35%;
+	background: url('http://static.iorcas.com/tuiguang/20150707_beatboy/images/childfist.png') no-repeat;
+	background-size: contain;
+}
+.beat_beatBack .glass{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background:url('http://static.iorcas.com/tuiguang/20150707_beatboy/images/glassbroke.png') no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+.beat_reduceGrade {
+	position: absolute;
+	top: 65%;
+	left: 0;
+	right: 0;
+	text-align: center;
+}
+
+
+
+
+/* 动画 */
+/* 头部1挑 */
+@-webkit-keyframes 'headProvoke' {
+    0% {-webkit-transform: translateX(0);}
+    25% {-webkit-transform: translateX(2%);}
+    50% {-webkit-transform: translateX(0);}
+    75% {-webkit-transform: translateX(-2%);}
+    100% {-webkit-transform: translateX(0);}
+}
+@keyframes 'headProvoke' {
+	0% {transform: translateX(0);}
+    25% {transform: translateX(2%);}
+    50% {transform: translateX(0);}
+    75% {transform: translateX(-2%);}
+    100% {transform: translateX(0);}
+}
+.ani_headProvoke {
+	$animationHeadProvoke: "headProvoke" 1.5s linear 0s infinite;
+	-webkit-animation: $animationHeadProvoke;
+	animation: $animationHeadProvoke;
+}
+/* 头部2晕 */
+@-webkit-keyframes 'headDizzy' {
+    0% {-webkit-transform: rotate(0);}
+    25% {-webkit-transform: rotate(5deg);}
+    50% {-webkit-transform: rotate(0);}
+    75% {-webkit-transform: rotate(-5deg);}
+    100% {-webkit-transform: rotate(0);}
+}
+@keyframes 'headDizzy' {
+    0% {transform: rotate(0);}
+    25% {transform: rotate(5deg);}
+    50% {transform: rotate(0);}
+    75% {transform: rotate(-5deg);}
+    100% {transform: rotate(0);}
+}
+.ani_headDizzy {
+	$animationHeadDizzy: "headDizzy" 1s linear 0s infinite;
+	-webkit-animation: $animationHeadDizzy;
+	animation: $animationHeadDizzy;
+}
+/* 头部3哭 */
+@-webkit-keyframes 'headCry' {
+    0% {-webkit-transform: translateY(0);}
+    25% {-webkit-transform: translateY(2%);}
+    50% {-webkit-transform: translateY(0);}
+    75% {-webkit-transform: translateY(-2%);}
+    100% {-webkit-transform: translateY(0);}
+}
+@keyframes 'headCry' {
+    0% {transform: translateY(0);}
+    25% {transform: translateY(2%);}
+    50% {transform: translateY(0);}
+    75% {transform: translateY(-2%);}
+    100% {transform: translateY(0);}
+}
+.ani_headCry {
+	$animationHeadCry: "headCry" 1s linear 0s infinite;
+	-webkit-animation: $animationHeadCry;
+	animation: $animationHeadCry;
+}
+/* 还击屏幕震动 */
+@-webkit-keyframes 'beatBack'{
+	0%{-webkit-transform: translate(.5%, .5%);}
+	25%{-webkit-transform: translate(-.5%, -.5%);}
+	50%{-webkit-transform: translate(.5%, -.5%);}
+	75%{-webkit-transform: translate(-.5%, .5%);}
+	100%{-webkit-transform: translate(0, 0);}
+}
+@keyframes 'beatBack'{
+	0%{transform: translate(.5%, .5%);}
+	25%{transform: translate(-.5%, -.5%);}
+	50%{transform: translate(.5%, -.5%);}
+	75%{transform: translate(-.5%, .5%);}
+	100%{transform: translate(0, 0);}
+}
+.ani_beatBack {
+	$animationBeatBack: "beatBack" .1s linear 0s 3;
+	-webkit-animation: $animationBeatBack;
+	animation: $animationBeatBack;
+}
+/* 左手 */
+@-webkit-keyframes 'leftHand'{
+	0%{-webkit-transform: translate(2%, -2%);}
+	50%{-webkit-transform: translate(0, 0);}
+	100%{-webkit-transform: translate(2%, -2%);}
+}
+@keyframes 'leftHand'{
+	0%{transform: translate(2%, -2%);}
+	50%{transform: translate(0, 0);}
+	100%{transform: translate(2%, -2%);}
+}
+.ani_leftHand {
+	$animationLeftHand: "leftHand" 1s linear 0s infinite;
+	-webkit-animation: $animationLeftHand;
+	animation: $animationLeftHand;
+}
+/* 右手 */
+@-webkit-keyframes 'rightHand'{
+	0%{-webkit-transform: translate(0, 0);}
+	50%{-webkit-transform: translate(-2%, -2%);}
+	100%{-webkit-transform: translate(0, 0);}
+}
+@keyframes 'rightHand'{
+	0%{transform: translate(0, 0);}
+	50%{transform: translate(-2%, -2%);}
+	100%{transform: translate(0, 0);}
+}
+.ani_rightHand {
+	$animationRightHand: "rightHand" 1s linear 0s infinite;
+	-webkit-animation: $animationRightHand;
+	animation: $animationRightHand;
+}
+
+
+/* 媒体查询 */
+@media only screen and (max-device-height:480px){
+	/*将规则面板的字体缩小*/
+	body{
+		font-size:10.5px;
+	}
+
+}
+
+
+

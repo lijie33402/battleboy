@@ -1,0 +1,81 @@
+
+.beat_result {
+	display: none;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: #218ace;
+}
+
+.result_top {
+	background: #fff;
+	padding-bottom: 5%;
+}	
+
+img.result_topImg{
+	display: block;
+	width: 100%;
+	height: 30%;
+	border: 0;
+}
+
+.result_top_content{
+	width: 86%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+
+/*你的积分样式*/
+.result_tip{
+	font-size: 16px;
+	text-align: center;
+	color: #666666;
+}
+
+span.result_score{
+	color: #f0c03f;
+	font-size:36px; 
+}
+
+.result_btn {
+	display: block;
+	width: 86%;
+	margin: 10% auto 0;
+	padding: 4% 0;
+	border: none;
+	border-bottom:5px solid #c83e1e;
+	background-color: #ff673c;
+	color: #fff;
+	font-size: 21px;
+}
+
+.result_link {
+	color:#ff673c;
+	text-decoration: underline;
+	margin-top: 5%;
+	text-align: center;
+}
+
+/* 规则 */
+.result_bottom {
+	padding: 7%;
+	color: #fff;
+	font-size: 16px;
+}
+.result_bottom h2 {
+	font-size: 20px;
+	margin-bottom: 5%;
+}
+
+
+.beat_result_Rule {
+	background: #fff;
+}
+.beat_result_Rule .result_btn {
+	margin-top: 0;
+	margin-bottom: 10%;
+}
+.beat_result_Rule .result_bottom {
+	color: #666;
+}

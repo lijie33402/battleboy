@@ -1,0 +1,1136 @@
+@charset "UTF-8";
+/**
+ * main.scss
+ * @author lee 
+ * @date 2015-04-23
+ *
+ */
+/**
+ * _mixin.scss 常见样式封装、兼容性封装、常见工具方法
+ * @author lee
+ * @date 2015-04-23
+ *
+ * --- flex ----
+ * #display_flex
+ * #flex
+ * #flex_grow
+ * #flex_shrink
+ * #flex_basis
+ * #flex_align_items
+ * #flex_justify_content
+ * #flex_childPos
+ *
+ * --- layout  ---
+ * #box_sizing
+ * #clear
+ *
+ * --- appearance ---
+ * #text_ellipsis
+ * #opacity
+ * #box_shadow
+ * #appearance
+ * #bg_gradient
+ *   #twoColor
+ *   #threeColor
+ *
+ * --- transform ---
+ * #transform
+ * #scale
+ * #skew
+ * #translate
+ * #rotate
+ * #perspective
+ * #origin
+ *
+ * --- transition ---
+ * #transition
+ * #transition-transform
+ *
+ * --- animation ---
+ * #animation
+ * #keyframes
+ *
+ * --- media ---
+ * #screenResolution
+ * #screenForPad
+ * #screenForPhone
+ * #screenForIE10AndLater
+ * #screenForIE8
+ *
+ * --- other ---
+ * #inlineBlock
+ * #square
+ * #absoluteCenter
+ * #triangle
+ * #bfc
+ * 
+ */
+/* ------------------------------ flex ------------------------------ */
+/* #display_flex */
+/* #flex */
+/**
+ * 伸缩流方向
+ * @param: row | row-reverse | column | column-reverse
+ */
+/* #flex_grow */
+/* #flex_shrink */
+/* #flex_basis */
+/* #flex_align_items */
+/* #flex_justify_content */
+/* #flex_childPos horizontal/vertical */
+/* ------------------------------ layout ------------------------------ */
+/* #box_sizing */
+/* #clear */
+/* ------------------------------ appearance ------------------------------ */
+/* #text_ellipsis */
+/* #opacity */
+/* #box_shadow */
+/* #appearance */
+/* #bg_gradient 跨浏览器的渐变背景 */
+/* #twoColor 两种颜色的渐变 */
+/* 垂直渐变，自上而下 */
+/* 水平渐变，自左而右 */
+/* #threeColor 三种颜色的渐变 */
+/* 垂直渐变，自上而下 */
+/* 水平渐变，自左而右 */
+/* ------------------------------ transform ------------------------------ */
+/* #transform */
+/* #scale */
+/* #skew */
+/* #translate */
+/* #rotate */
+/* #perspective */
+/* #origin */
+/* ------------------------------ transition ------------------------------ */
+/* #transition */
+/* #transition-transform */
+/* ------------------------------ animation ------------------------------ */
+/* #animation */
+/* #keyframes */
+/* ------------------------------ media ------------------------------ */
+/* #screenResolution */
+/* #screenForPad 为Pad两栏布局模式写的代码可以包在这里 */
+/* #screenForPhone 只在Phone版使用，不在Pad版使用的样式 */
+/* #screenForIE10AndLater 兼容IE10&11 */
+/* screenForIE8 */
+/* ------------------------------ other ------------------------------ */
+/* #inlineBlock */
+/* #square 产生正方形的宽高 */
+/* #square 产生正方形的宽高 */
+/* #triangle 小三角 */
+/* #bfc */
+/**
+ * _reset.scss 重置样式
+ * @author lee
+ * @date 2015-04-23
+ */
+/* line 8, ../sass/_reset.scss */
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td, figure {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 13, ../sass/_reset.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 17, ../sass/_reset.scss */
+body, input, textarea, select, button {
+  outline: none;
+  -webkit-text-size-adjust: none;
+}
+
+/* line 22, ../sass/_reset.scss */
+input, textarea, select, button {
+  font-size: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* line 27, ../sass/_reset.scss */
+input, textarea, fieldset, img {
+  border: none;
+}
+
+/* line 31, ../sass/_reset.scss */
+ul, ol, li {
+  list-style: none;
+}
+
+/* line 35, ../sass/_reset.scss */
+html, body {
+  height: 100%;
+  position: relative;
+}
+
+/* line 40, ../sass/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: inherit;
+}
+
+/* line 45, ../sass/_reset.scss */
+textarea {
+  overflow: auto;
+}
+
+/* line 49, ../sass/_reset.scss */
+img {
+  max-width: 100%;
+}
+
+/* line 53, ../sass/_reset.scss */
+:focus {
+  outline: none;
+}
+
+/* line 57, ../sass/_reset.scss */
+input[type=radio]::-ms-check, input[type=checkbox]::-ms-check {
+  display: none;
+}
+
+/* line 61, ../sass/_reset.scss */
+select::-ms-expand {
+  display: none;
+}
+
+/**
+ * _base.scss 项目基础样式、项目用方法、项目用function
+ * @author lee
+ * @date 2015-04-23
+ *
+ */
+/* line 9, ../sass/_base.scss */
+body, input, textarea, select, button {
+  font-family: "Helvetica Neue",STheiti,sans-serif;
+}
+
+/* line 13, ../sass/_base.scss */
+html, body {
+  width: 100%;
+}
+
+/* line 17, ../sass/_base.scss */
+body {
+  position: relative;
+  background: #fff;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #218ace;
+  word-break: break-all;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* line 27, ../sass/_base.scss */
+a {
+  color: #1d8ae5;
+  -webkit-tap-highlight-color: transparent;
+  /* 扩大通用a标签点击时的表现区域 */
+}
+/* line 31, ../sass/_base.scss */
+a, a:hover, a:active {
+  outline: none;
+}
+/* line 34, ../sass/_base.scss */
+a, a:hover {
+  text-decoration: none;
+}
+/* line 38, ../sass/_base.scss */
+a:active {
+  position: relative;
+}
+/* line 40, ../sass/_base.scss */
+a:active:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  /* key note：事件穿透 */
+  top: -6px;
+  left: -6px;
+  width: 100%;
+  height: 100%;
+  padding: 6px;
+}
+
+/* 为适配旧版不支持flex的缩写方法，要设置这样一个空标签 */
+/* line 55, ../sass/_base.scss */
+.func_growSpace {
+  display: block;
+  width: 0px;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -o-box-flex: 1;
+  -ms-box-flex: 1;
+  -ms-flex: 1;
+  -moz-box-flex-grow: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-grow: 1;
+  flex-grow: 1;
+  -webkit-box-flex-basis: 0;
+  -moz-box-flex-basis: 0;
+  -webkit-flex-basis: 0;
+  -ms-flex-basis: 0;
+  flex-basis: 0;
+}
+
+/*背景图片样式*/
+/* line 3, ../sass/_other_game_default.scss */
+.qui_wrap_outer {
+  display: none;
+  background: url("http://static.iorcas.com/tuiguang/20150707_beatboy/images/bg.png") no-repeat;
+  background-position: 0;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/*蒙版样式*/
+/* line 17, ../sass/_other_game_default.scss */
+.qui_mask {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
+
+/* line 27, ../sass/_other_game_default.scss */
+.qui_mask_BeatIntro {
+  display: block;
+}
+
+/* line 30, ../sass/_other_game_default.scss */
+.qui_mask_BeatEnd {
+  opacity: 0;
+}
+
+/* line 33, ../sass/_other_game_default.scss */
+.qui_mask_BeatEnd_Show {
+  opacity: 1;
+  -webkit-transition: opacity .3s linear 0s;
+  transition: opacity .3s linear 0s;
+}
+
+/* line 38, ../sass/_other_game_default.scss */
+.qui_wrap_inner {
+  width: 85%;
+  height: 96%;
+  margin: 0 auto;
+  padding-top: 4%;
+}
+
+/*规则面板头部gameover样式*/
+/* line 46, ../sass/_other_game_default.scss */
+.over_head {
+  width: 100%;
+  height: 15%;
+  margin-top: 13%;
+  font-size: 35px;
+  color: #ffcb15;
+  text-align: center;
+}
+
+/*规则面板中部样式*/
+/* line 56, ../sass/_other_game_default.scss */
+.qui_rule_outer {
+  height: 46%;
+  width: 97%;
+  border: 5px solid #005891;
+  border-radius: 25px;
+  background-color: #4acbef;
+  -webkit-box-shadow: 0px -20px #218ace inset;
+  -moz-box-shadow: 0px -20px #218ace inset;
+  box-shadow: 0px -20px #218ace inset;
+}
+
+/* line 66, ../sass/_other_game_default.scss */
+.qui_rule_inner {
+  height: 69%;
+  width: 77%;
+  margin: 0 auto;
+  margin-top: 5%;
+  border-top: 5px solid #55a6d8;
+  background: url("http://static.iorcas.com/tuiguang/20150707_beatboy/images/rule_background.png");
+  border-radius: 25px;
+  padding: 0 8%;
+}
+
+/* 规则文字样式 */
+/*.qui_context h2{
+	font-weight: normal;
+	font-size: 30px;	
+	text-align: center;
+	margin-top: 10%;
+	margin-bottom: 8%;
+}*/
+/* 微信分享蒙版样式 */
+/* line 88, ../sass/_other_game_default.scss */
+.beat_guide2Share {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: url("http://static.iorcas.com/tuiguang/20150707_beatboy/images/share.png") no-repeat center;
+  background-color: rgba(0, 0, 0, 0.7);
+  background-size: contain;
+  text-indent: -9999px;
+}
+
+/* 游戏按钮 */
+/* line 102, ../sass/_other_game_default.scss */
+.beat_gameBtn {
+  display: block;
+  width: 65%;
+  height: 28%;
+  border: 5px solid #9c0c18;
+  border-radius: 25px;
+  background-color: #ff6630;
+  -webkit-box-shadow: 0px -10px #c23d0d inset;
+  -moz-box-shadow: 0px -10px #c23d0d inset;
+  box-shadow: 0px -10px #c23d0d inset;
+  margin: 0 auto;
+  margin-top: 10%;
+  color: #fff;
+  font-size: 30px;
+}
+
+/* 加载中 */
+/* line 119, ../sass/_other_game_default.scss */
+.beat_loading {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 40%;
+  text-align: center;
+  color: #666;
+}
+
+@-webkit-keyframes 'loadingIcon' {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  75% {
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+/* line 149, ../sass/_other_game_default.scss */
+.ior_loadingIcon {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background-image: url(http://static.iorcas.com/tuiguang/20150707_beatboy/images/loading.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: cover;
+  -webkit-animation: "loadingIcon" 1.3s linear 0s infinite;
+  -moz-animation: "loadingIcon" 1.3s linear 0s infinite;
+  -o-animation: "loadingIcon" 1.3s linear 0s infinite;
+  animation: "loadingIcon" 1.3s linear 0s infinite;
+}
+
+/*iphone4样式修正*/
+@media only screen and (max-device-height: 480px) {
+  /*按钮圆角角度缩小*/
+  /* line 165, ../sass/_other_game_default.scss */
+  .beat_gameBtn {
+    border-radius: 15px;
+    font-size: 27px;
+    -webkit-box-shadow: 0px -7px #c24e06 inset;
+    -moz-box-shadow: 0px -7px #c24e06 inset;
+    box-shadow: 0px -7px #c24e06 inset;
+    border-width: 3px;
+  }
+}
+/*拳头样式*/
+/* line 3, ../sass/_other_game_begin.scss */
+.beat_beginFist {
+  float: left;
+  height: 180%;
+  width: 67%;
+  margin: 2% 16.5% 5% 16.5%;
+}
+
+/* line 9, ../sass/_other_game_begin.scss */
+.qui_rule_inner {
+  width: 87%;
+  padding: 0 3%;
+}
+
+/*适当缩小规则字体避免换行*/
+/* line 14, ../sass/_other_game_begin.scss */
+.qui_context_start h2 {
+  margin: 0;
+  font-size: 1.65em;
+  text-align: center;
+  font-weight: normal;
+}
+
+/* line 20, ../sass/_other_game_begin.scss */
+.beat_toRule {
+  display: block;
+  margin-top: 1%;
+  text-decoration: none;
+  font-size: 1.43em;
+  text-align: center;
+}
+
+/*倒计时效果样式*/
+/* line 30, ../sass/_other_game_begin.scss */
+.begin_countdown {
+  color: #ffcb15;
+  font-size: 40px;
+  font-weight: bold;
+  position: absolute;
+  width: 85%;
+  top: 45%;
+  text-align: center;
+}
+
+/*游戏开始样式*/
+/* line 40, ../sass/_other_game_begin.scss */
+.game_in {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 44, ../sass/_other_game_begin.scss */
+.beat_gradeTime {
+  display: none;
+  height: 17%;
+}
+
+/* line 48, ../sass/_other_game_begin.scss */
+.beat_gradeTime .grade {
+  text-align: center;
+}
+
+/* line 51, ../sass/_other_game_begin.scss */
+.beat_gradeTime,
+.beat_reduceGrade {
+  color: #ffcb15;
+}
+
+/* line 55, ../sass/_other_game_begin.scss */
+.beat_gradeTime h1,
+.beat_reduceGrade h1 {
+  display: inline-block;
+  font-size: 67px;
+  font-weight: bold;
+  text-align: center;
+  -webkit-text-stroke: 4px #7a3218;
+  text-stroke: 4px #7a3218;
+}
+
+/* line 64, ../sass/_other_game_begin.scss */
+.beat_reduceGrade h1 {
+  font-size: 100px;
+}
+
+/* line 67, ../sass/_other_game_begin.scss */
+.beat_gradeTime .gradeText {
+  margin-left: 2%;
+  font-size: 16px;
+  font-weight: bold;
+  text-shadow: 1px 1px 0 #7a3218;
+}
+
+@-webkit-keyframes 'point' {
+  0% {
+    top: 0;
+  }
+  90% {
+    top: 30%;
+  }
+  100% {
+    top: 28%;
+  }
+}
+@keyframes 'point' {
+  0% {
+    top: 0;
+  }
+  90% {
+    top: 30%;
+  }
+  100% {
+    top: 28%;
+  }
+}
+/* line 83, ../sass/_other_game_begin.scss */
+.beat_gradeTime .ani_grade {
+  position: absolute;
+  z-index: 1000;
+  left: 0;
+  right: 0;
+  -webkit-animation: "point" 0.5s ease-in 0s forwards;
+  animation: "point" 0.5s ease-in 0s forwards;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+/* line 97, ../sass/_other_game_begin.scss */
+.ani_grade h1 {
+  -webkit-text-stroke: 0px #7a3218;
+  text-stroke: 0px #7a3218;
+  font-size: 134px;
+  -webkit-transition: all .4s linear 0s;
+  transition: all .5s linear 0s;
+}
+
+/* line 104, ../sass/_other_game_begin.scss */
+.ani_grade .gradeText {
+  text-shadow: none;
+  font-size: 32px;
+  -webkit-transition: all .4s linear 0s;
+  transition: all .5s linear 0s;
+}
+
+/* line 111, ../sass/_other_game_begin.scss */
+.beat_gradeTime .time {
+  position: absolute;
+  width: 27%;
+  height: 17%;
+  right: 6%;
+  top: 0;
+  font-size: 20px;
+  text-align: right;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 1px 1px 0 #7a3218;
+}
+
+/* line 123, ../sass/_other_game_begin.scss */
+.beat_gradeTime .timeText {
+  margin-top: 22%;
+}
+
+/* line 126, ../sass/_other_game_begin.scss */
+.beat_gradeTime .timeSec {
+  margin-right: 3px;
+}
+
+/* line 131, ../sass/_other_game_begin.scss */
+.beat_boyHead {
+  z-index: 2;
+  position: absolute;
+  left: 13%;
+  top: 21%;
+  overflow: hidden;
+}
+
+/* line 138, ../sass/_other_game_begin.scss */
+.beat_boyHead img {
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  width: 100%;
+  height: 700%;
+  position: absolute;
+  max-width: none;
+  left: 0%;
+  top: 0%;
+}
+
+/* line 151, ../sass/_other_game_begin.scss */
+.beat_boyBody {
+  position: absolute;
+  background: url("http://static.iorcas.com/tuiguang/20150707_beatboy/images/body.png") no-repeat;
+  background-size: contain;
+}
+
+/* line 157, ../sass/_other_game_begin.scss */
+.beat_hand {
+  position: absolute;
+  z-index: 3;
+}
+
+/* line 161, ../sass/_other_game_begin.scss */
+.beat_hand_Left,
+.beat_hand_Right {
+  top: 60%;
+  width: 43%;
+  height: 55%;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+/* line 172, ../sass/_other_game_begin.scss */
+.beat_hand_Left {
+  background: url("http://static.iorcas.com/tuiguang/20150707_beatboy/images/lefthand.png") no-repeat;
+  background-size: contain;
+  left: -15%;
+}
+
+/* line 177, ../sass/_other_game_begin.scss */
+.beat_hand_Right {
+  background: url("http://static.iorcas.com/tuiguang/20150707_beatboy/images/righthand.png") no-repeat;
+  background-size: contain;
+  right: -15%;
+}
+
+/* line 182, ../sass/_other_game_begin.scss */
+.beat_hand_Left_Hit,
+.beat_hand_Right_Hit {
+  top: 44%;
+}
+
+/* line 186, ../sass/_other_game_begin.scss */
+.beat_hand_Left_Hit {
+  left: -1%;
+}
+
+/* line 189, ../sass/_other_game_begin.scss */
+.beat_hand_Right_Hit {
+  right: -1%;
+}
+
+/* line 194, ../sass/_other_game_begin.scss */
+.beat_hand_BtmLeft,
+.beat_hand_BtmRight {
+  width: 50%;
+  height: 300%;
+  top: 100%;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+/* line 205, ../sass/_other_game_begin.scss */
+.beat_hand_BtmLeft {
+  background: url("http://static.iorcas.com/tuiguang/20150707_beatboy/images/bottomhand_l.png") no-repeat;
+  background-size: contain;
+  left: 0%;
+}
+
+/* line 210, ../sass/_other_game_begin.scss */
+.beat_hand_BtmRight {
+  background: url("http://static.iorcas.com/tuiguang/20150707_beatboy/images/bottomhand_r.png") no-repeat;
+  background-size: contain;
+  left: 49%;
+}
+
+/* 打击触发 */
+/* line 218, ../sass/_other_game_begin.scss */
+.beat_hit,
+.beat_dbHit {
+  position: absolute;
+  top: 25%;
+  z-index: 4;
+  height: 75%;
+  width: 100%;
+}
+
+/* line 226, ../sass/_other_game_begin.scss */
+.beat_dbHit {
+  display: none;
+}
+
+/*小孩还击样式*/
+/* line 231, ../sass/_other_game_begin.scss */
+.beat_beatBack {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+/* line 239, ../sass/_other_game_begin.scss */
+.beat_beatBack_Show {
+  /* chrome下display:none的元素不存在渲染树中，所以切换到block的时候出现延迟的表现 */
+  z-index: 5;
+}
+
+/* line 242, ../sass/_other_game_begin.scss */
+.beat_beatBack .hand {
+  position: absolute;
+  top: 51%;
+  left: 8%;
+  width: 35%;
+  height: 35%;
+  background: url("http://static.iorcas.com/tuiguang/20150707_beatboy/images/childfist.png") no-repeat;
+  background-size: contain;
+}
+
+/* line 251, ../sass/_other_game_begin.scss */
+.beat_beatBack .glass {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: url("http://static.iorcas.com/tuiguang/20150707_beatboy/images/glassbroke.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* line 261, ../sass/_other_game_begin.scss */
+.beat_reduceGrade {
+  position: absolute;
+  top: 65%;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+/* 动画 */
+/* 头部1挑 */
+@-webkit-keyframes 'headProvoke' {
+  0% {
+    -webkit-transform: translateX(0);
+  }
+  25% {
+    -webkit-transform: translateX(2%);
+  }
+  50% {
+    -webkit-transform: translateX(0);
+  }
+  75% {
+    -webkit-transform: translateX(-2%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+  }
+}
+@keyframes 'headProvoke' {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(2%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(-2%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+/* line 288, ../sass/_other_game_begin.scss */
+.ani_headProvoke {
+  -webkit-animation: "headProvoke" 1.5s linear 0s infinite;
+  animation: "headProvoke" 1.5s linear 0s infinite;
+}
+
+/* 头部2晕 */
+@-webkit-keyframes 'headDizzy' {
+  0% {
+    -webkit-transform: rotate(0);
+  }
+  25% {
+    -webkit-transform: rotate(5deg);
+  }
+  50% {
+    -webkit-transform: rotate(0);
+  }
+  75% {
+    -webkit-transform: rotate(-5deg);
+  }
+  100% {
+    -webkit-transform: rotate(0);
+  }
+}
+@keyframes 'headDizzy' {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(0);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+/* line 308, ../sass/_other_game_begin.scss */
+.ani_headDizzy {
+  -webkit-animation: "headDizzy" 1s linear 0s infinite;
+  animation: "headDizzy" 1s linear 0s infinite;
+}
+
+/* 头部3哭 */
+@-webkit-keyframes 'headCry' {
+  0% {
+    -webkit-transform: translateY(0);
+  }
+  25% {
+    -webkit-transform: translateY(2%);
+  }
+  50% {
+    -webkit-transform: translateY(0);
+  }
+  75% {
+    -webkit-transform: translateY(-2%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+  }
+}
+@keyframes 'headCry' {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(2%);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-2%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/* line 328, ../sass/_other_game_begin.scss */
+.ani_headCry {
+  -webkit-animation: "headCry" 1s linear 0s infinite;
+  animation: "headCry" 1s linear 0s infinite;
+}
+
+/* 还击屏幕震动 */
+@-webkit-keyframes 'beatBack' {
+  0% {
+    -webkit-transform: translate(0.5%, 0.5%);
+  }
+  25% {
+    -webkit-transform: translate(-0.5%, -0.5%);
+  }
+  50% {
+    -webkit-transform: translate(0.5%, -0.5%);
+  }
+  75% {
+    -webkit-transform: translate(-0.5%, 0.5%);
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+  }
+}
+@keyframes 'beatBack' {
+  0% {
+    transform: translate(0.5%, 0.5%);
+  }
+  25% {
+    transform: translate(-0.5%, -0.5%);
+  }
+  50% {
+    transform: translate(0.5%, -0.5%);
+  }
+  75% {
+    transform: translate(-0.5%, 0.5%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+/* line 348, ../sass/_other_game_begin.scss */
+.ani_beatBack {
+  -webkit-animation: "beatBack" 0.1s linear 0s 3;
+  animation: "beatBack" 0.1s linear 0s 3;
+}
+
+/* 左手 */
+@-webkit-keyframes 'leftHand' {
+  0% {
+    -webkit-transform: translate(2%, -2%);
+  }
+  50% {
+    -webkit-transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(2%, -2%);
+  }
+}
+@keyframes 'leftHand' {
+  0% {
+    transform: translate(2%, -2%);
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(2%, -2%);
+  }
+}
+/* line 364, ../sass/_other_game_begin.scss */
+.ani_leftHand {
+  -webkit-animation: "leftHand" 1s linear 0s infinite;
+  animation: "leftHand" 1s linear 0s infinite;
+}
+
+/* 右手 */
+@-webkit-keyframes 'rightHand' {
+  0% {
+    -webkit-transform: translate(0, 0);
+  }
+  50% {
+    -webkit-transform: translate(-2%, -2%);
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+  }
+}
+@keyframes 'rightHand' {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-2%, -2%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+/* line 380, ../sass/_other_game_begin.scss */
+.ani_rightHand {
+  -webkit-animation: "rightHand" 1s linear 0s infinite;
+  animation: "rightHand" 1s linear 0s infinite;
+}
+
+/* 媒体查询 */
+@media only screen and (max-device-height: 480px) {
+  /*将规则面板的字体缩小*/
+  /* line 390, ../sass/_other_game_begin.scss */
+  body {
+    font-size: 10.5px;
+  }
+}
+/* line 2, ../sass/_other_game_result.scss */
+.beat_result {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #218ace;
+}
+
+/* line 10, ../sass/_other_game_result.scss */
+.result_top {
+  background: #fff;
+  padding-bottom: 5%;
+}
+
+/* line 15, ../sass/_other_game_result.scss */
+img.result_topImg {
+  display: block;
+  width: 100%;
+  height: 30%;
+  border: 0;
+}
+
+/* line 22, ../sass/_other_game_result.scss */
+.result_top_content {
+  width: 86%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/*你的积分样式*/
+/* line 30, ../sass/_other_game_result.scss */
+.result_tip {
+  font-size: 16px;
+  text-align: center;
+  color: #666666;
+}
+
+/* line 36, ../sass/_other_game_result.scss */
+span.result_score {
+  color: #f0c03f;
+  font-size: 36px;
+}
+
+/* line 41, ../sass/_other_game_result.scss */
+.result_btn {
+  display: block;
+  width: 86%;
+  margin: 10% auto 0;
+  padding: 4% 0;
+  border: none;
+  border-bottom: 5px solid #c83e1e;
+  background-color: #ff673c;
+  color: #fff;
+  font-size: 21px;
+}
+
+/* line 53, ../sass/_other_game_result.scss */
+.result_link {
+  color: #ff673c;
+  text-decoration: underline;
+  margin-top: 5%;
+  text-align: center;
+}
+
+/* 规则 */
+/* line 61, ../sass/_other_game_result.scss */
+.result_bottom {
+  padding: 7%;
+  color: #fff;
+  font-size: 16px;
+}
+
+/* line 66, ../sass/_other_game_result.scss */
+.result_bottom h2 {
+  font-size: 20px;
+  margin-bottom: 5%;
+}
+
+/* line 72, ../sass/_other_game_result.scss */
+.beat_result_Rule {
+  background: #fff;
+}
+
+/* line 75, ../sass/_other_game_result.scss */
+.beat_result_Rule .result_btn {
+  margin-top: 0;
+  margin-bottom: 10%;
+}
+
+/* line 79, ../sass/_other_game_result.scss */
+.beat_result_Rule .result_bottom {
+  color: #666;
+}
